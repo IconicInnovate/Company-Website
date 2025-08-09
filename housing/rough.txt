@@ -1,0 +1,31 @@
+        <!-- I want to make it ASIDE -->
+        <!-- <section id="newsletter">
+            <div class="container">
+                <h1>Medicare</h1>
+                <form action="" method="">
+                    <input type="email" placeholder="Keyword...">
+                    <button type="submit" class="submit, button_1" >Search</button>
+                </form>
+            </div>
+        </section> -->
+
+
+
+        <!-- <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service">
+                        <h3>Real Estate Development</h3>
+                        <p>Modern residential and commercial properties built to elevate communities and attract lasting value.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Interior Decoration</h3>
+                        <p>Stylish and functional interiors tailored to client tastes, enhancing spaces with elegance and purpose.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Professional House Painting</h3>
+                        <p>Flawless finishing and durable coatings that preserve and beautify both interior and exterior spaces.</p>
+                    </div>
+                </div>
+            </div> -->
