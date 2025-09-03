@@ -6,7 +6,7 @@ Our goal is to create a **modern, responsive, and feature-rich website** that re
 
 ## Project Overview  
 
-Iconic Innovations Nigeria Limited (IINL) is a growing, innovative company with operations in across different sectors majorly **Tech, Real Estate and Interiors.**  
+Iconic Innovations Nigeria Limited (IINL) is a growing, innovative company with operations across different sectors majorly **Tech, Real Estate and Interiors.**  
 This website is designed to:
 
 - Present the **company profile, mission, and vision**.
