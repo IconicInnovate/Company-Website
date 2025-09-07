@@ -1,3 +1,6 @@
+const video = document.getElementById("heroVideo");
+video.playbackRate = 0.5; // half speed
+
 // Elements
 const menuToggle = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -23,6 +26,14 @@ overlay.addEventListener("click", () => {
   mobileMenu.classList.remove("open");
   overlay.style.opacity = "0";
   overlay.style.visibility = "hidden";
+});
+
+document.addEventListener("scroll", () => {
+  if (mobileMenu.classList.contains("open")) {
+    mobileMenu.classList.remove("open");
+    overlay.style.opacity = "0";
+    overlay.style.visibility = "hidden";
+  }
 });
 
 // Scroll Fade-in Animation
