@@ -287,11 +287,10 @@ header {
   .close-btn {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
     align-self: flex-end;
     cursor: pointer;
-    margin-bottom: 0.5rem;
-    display: none;
+    margin-bottom: var(--spacing-h);
   }
 }
 // =============================
