@@ -51,3 +51,26 @@ const observer = new IntersectionObserver(
 );
 
 fadeElements.forEach((el) => observer.observe(el));
+
+
+
+
+
+// =============================
+// FAQ Section
+// =============================
+  const buttons = document.querySelectorAll(".accordion-item button");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Close all accordion items
+      buttons.forEach((b) => {
+        b.classList.remove("active");
+        b.nextElementSibling.classList.remove("open");
+      });
+
+      // Open the clicked one
+      btn.classList.add("active");
+      btn.nextElementSibling.classList.add("open");
+    });
+  });
