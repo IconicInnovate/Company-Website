@@ -1,6 +1,5 @@
 :root {
-  --font-family-base: "Open Sans", sans-serif;
-  --font-family-alt: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: "Mulish", sans-serif;
   --color-dark: #111;
   --color-light: #f9f9f9;
   --color-grey: #444444;
@@ -9,15 +8,11 @@
   --color-primary-hover: #0055aa;
   --color-secondary: #6b7280;
   --color-white: #fff;
-  --border-radius-sm: 6px;
-  --border-radius-md: 10px;
-  --border-radius-lg: 16px;
-  --border-radius-r: 32px;
   --border: 1px solid var(--color-secondary);
-  --font-size-h1: 3rem;
+  --font-size-h1: 2.85rem;
   --font-size-h2: 2rem;
-  --font-size-h3: 1.75rem;
-  --font-size-h4: 1.375rem;
+  --font-size-h3: 1.55rem;
+  --font-size-h4: 1.275rem;
   --font-size-h5: 1.125rem;
   --font-size-h6: 1rem;
   --font-size-p: 1rem;
@@ -30,10 +25,10 @@
   --spacing: 1rem;
   --spacing-2x: 2rem;
   --spacing-3x: 3rem;
-  --spacing-4x: 3rem;
-  --spacing-5x: 3rem;
-  --spacing-section: 8rem;
+  --spacing-4x: 4rem;
+  --spacing-5x: 5rem;
   --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
 * {
@@ -43,7 +38,7 @@
 }
 
 body {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family);
   color: var(--color-dark);
   background-color: var(--color-light);
   line-height: 1.4;
@@ -56,7 +51,7 @@ body {
 }
 
 section {
-  padding-block: var(--spacing-section);
+  padding-block: var(--spacing-4x);
 }
 
 h1,
@@ -104,7 +99,6 @@ p {
   color: var(--color-white);
   padding: 14px 20px;
   border: none;
-  border-radius: var(--border-radius-md);
   font-size: var(--font-size-btn);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -121,7 +115,6 @@ p {
   display: inline-block;
   border: var(--border);
   padding: 0.7rem 1.5rem;
-  border-radius: var(--border-radius-md);
   background: var(--color-white);
   font-size: var(--font-size-btn);
   text-decoration: none;
@@ -140,6 +133,11 @@ p {
 }
 .heading h2 {
   margin-bottom: var(--spacing);
+}
+
+button {
+  border: none;
+  background: none;
 }
 
 header {
@@ -169,7 +167,7 @@ header .container .nav-links {
 header .container .nav-links a {
   text-decoration: none;
   color: var(--color-grey-alt);
-  font-family: var(--font-family-base);
+  font-family: var(--font-family);
   font-size: var(--font-size-small);
   font-weight: 500;
   line-height: 1.4;
@@ -185,7 +183,6 @@ header .container .nav-links a:hover {
 header .container .contact-btn {
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-dark);
-  border-radius: var(--border-radius-sm);
   font-size: var(--font-size-btn);
   text-decoration: none;
   color: var(--color-dark);
@@ -195,7 +192,12 @@ header .container .contact-btn:hover {
   background: var(--color-dark);
   color: var(--color-white);
 }
-header .container .menu-btn {
+header .container .right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-h);
+}
+header .container .right .menu-btn {
   background: none;
   border: none;
   display: none;
@@ -206,12 +208,11 @@ header .container .menu-btn {
   header .container .contact-btn {
     display: none;
   }
-  header .container .menu-btn {
+  header .container .right .menu-btn {
     display: block;
   }
 }
 
-/* Overlay */
 /* Mobile Menu (Dropdown style) */
 .mobile-menu {
   position: fixed;
@@ -230,6 +231,7 @@ header .container .menu-btn {
   transition: max-height 0.4s ease, padding 0.3s ease;
   z-index: 2001;
   /* Close Button inside mobile menu */
+  /* Dropdown styles */
 }
 .mobile-menu.open {
   max-height: 400px;
@@ -249,10 +251,32 @@ header .container .menu-btn {
   cursor: pointer;
   margin-bottom: var(--spacing-h);
 }
+.mobile-menu .nav-links > li {
+  margin-block: var(--spacing);
+}
+.mobile-menu .dropdown-menu {
+  overflow: hidden;
+  height: 0;
+}
+.mobile-menu .dropdown-menu .dropdown-menu li {
+  margin: 0;
+}
+.mobile-menu .dropdown-menu .dropdown-menu li a {
+  display: block;
+}
+.mobile-menu .dropdown-menu .dropdown-menu li a:hover {
+  color: var(--color-primary);
+}
+.mobile-menu .dropdown:hover .dropdown-menu {
+  transition: var(--transition);
+  height: auto;
+}
 
 .hero {
-  height: 70vh;
+  height: 85vh;
   position: relative;
+  padding-top: 20%;
+  overflow: hidden;
 }
 .hero .hero-video {
   position: absolute;
@@ -262,7 +286,7 @@ header .container .menu-btn {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  z-index: -1;
+  z-index: -3;
 }
 .hero .hero-overlay {
   position: absolute;
@@ -271,30 +295,37 @@ header .container .menu-btn {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  z-index: -1;
 }
-
-.legacy-section .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-section);
+.hero .container {
+  color: var(--color-white);
 }
-.legacy-section .container .buttons {
+.hero .container h1,
+.hero .container p {
+  max-width: 50%;
+  color: var(--color-white);
+}
+.hero .container p {
+  margin-block: var(--spacing-2x);
+}
+.hero .container .buttons {
   display: flex;
   gap: var(--spacing);
-  margin-top: var(--spacing-2x);
 }
 @media screen and (max-width: 786px) {
-  .legacy-section .container {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-2x);
+  .hero {
+    padding-top: 50%;
+  }
+  .hero .container h1,
+  .hero .container p {
+    max-width: 100%;
   }
 }
 
 .about-section .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-section);
+  gap: var(--spacing-2x);
   align-items: center;
 }
 .about-section .container .about-text p {
@@ -305,17 +336,16 @@ header .container .menu-btn {
 }
 .about-section .container .about-image img {
   width: 100%;
-  max-height: 600px;
+  max-height: 450px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: var(--border-radius-lg);
 }
 @media screen and (max-width: 786px) {
   .about-section .container {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .about-section .about-image {
+  .about-section .container .about-image {
     order: 1;
   }
 }
@@ -349,7 +379,6 @@ header .container .menu-btn {
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: var(--border-radius-lg);
 }
 .services-section .services-row .service-card h5 {
   padding-block: var(--spacing);
@@ -395,7 +424,6 @@ header .container .menu-btn {
   text-align: center;
   gap: var(--spacing);
   border: 1px solid #7d99b3;
-  border-radius: var(--border-radius-lg);
   background-color: var(--color-white);
 }
 .our-core-values .container .values .value-card img {
@@ -413,15 +441,11 @@ header .container .menu-btn {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing);
 }
-.leadership-section .container .leaders .leader-card {
-  border-radius: var(--border-radius-lg);
-}
 .leadership-section .container .leaders .leader-card img {
   width: 100%;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: var(--border-radius-lg);
 }
 .leadership-section .container .leaders .leader-card .details {
   display: flex;
@@ -485,7 +509,6 @@ header .container .menu-btn {
   background-color: #fdf3d9;
   padding: var(--spacing-3x);
   border: var(--border);
-  border-radius: var(--border-radius-lg);
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 30px;
@@ -495,7 +518,6 @@ header .container .menu-btn {
 }
 .faq-section .faq-container .accordion .accordion-item {
   background-color: var(--color-white);
-  border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
 }
@@ -545,7 +567,6 @@ header .container .menu-btn {
 }
 .faq-section .faq-container .faq-form {
   padding: var(--spacing-2x);
-  border-radius: var(--border-radius-md);
   box-shadow: var(--shadow);
   background-color: var(--color-white);
 }
@@ -558,7 +579,6 @@ header .container .menu-btn {
   padding: var(--spacing);
   margin: var(--spacing) 0;
   border: var(--border);
-  border-radius: var(--border-radius-sm);
   font-size: var(--font-size-p);
   resize: none;
 }
@@ -583,7 +603,6 @@ header .container .menu-btn {
 .footer .container .left {
   padding: var(--spacing-2x);
   background-color: var(--color-white);
-  border-radius: var(--border-radius-lg);
 }
 .footer .container .left .footer-brand {
   display: flex;
@@ -658,7 +677,6 @@ header .container .menu-btn {
 .footer .container .right {
   padding: var(--spacing-2x);
   background-color: var(--color-white);
-  border-radius: var(--border-radius-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -679,7 +697,6 @@ header .container .menu-btn {
   font-size: var(--font-size-p);
   width: 100%;
   background-color: #ffece5;
-  border-radius: var(--border-radius-r);
   margin-bottom: var(--spacing);
 }
 .footer .container .right form button {

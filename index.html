@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tagesschrift&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&dis
+play=swap"
       rel="stylesheet" />
   </head>
   <body>
@@ -32,42 +33,61 @@
           <a href="#">Home</a>
           <a href="#"
             >About Us
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="nav-icons">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
           </a>
           <a href="#">Branches</a>
           <a href="#">Our Goal & SDG</a>
         </nav>
         <a href="#" class="contact-btn">Contact Us</a>
 
+     <div class="right">
+           <!-- Search Icon -->
+        <button class="search-btn">
+          <i class="fa fa-search"></i>
+        </button>
         <!-- Hamburger Menu -->
         <button class="menu-btn" id="menu-toggle">
           <i class="fa fa-bars"></i>
         </button>
+     </div>
       </div>
     </header>
 
-    <!-- Dark Overlay -->
-    <div class="overlay" id="overlay"></div>
-
+   
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
       <button class="close-btn" id="close-menu">&times;</button>
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Branches</a>
-      <a href="#">Our Goal & SDG</a>
-      <a href="#">Contact Us</a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+
+        <!-- About Us with Dropdown -->
+        <li class="dropdown">
+          <a href="#">About Us ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Our Leadership</a></li>
+            <li><a href="#">Africapitalism</a></li>
+            <li><a href="#">Our Branches</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+
+        <!-- Our Branches with Dropdown -->
+        <li class="dropdown">
+          <a href="#">Our Branches ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Iconic Technologies</a></li>
+            <li><a href="#">Iconic Graphics</a></li>
+            <li><a href="#">Iconic Housing/Properties</a></li>
+            <li><a href="#">Iconic Interiors & Painting</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Our Goal & SDG</a></li>
+
+      
+      </ul>
     </div>
 
     <!-- Hero Section -->
@@ -81,11 +101,7 @@
         muted
         playsinline></video>
       <div class="hero-overlay"></div>
-    </section>
-
-    <!-- Content Section -->
-    <section class="legacy-section">
-      <div class="container">
+       <div class="container">
         <!-- Left side -->
         <div class="legacy-left">
           <h1>Building a Legacy of Innovation, Style, and Impact</h1>
@@ -105,11 +121,13 @@
       </div>
     </section>
 
+    
+
     <!-- Who We Are Section -->
     <section class="about-section fade-scroll">
       <div class="container">
         <div class="about-image">
-          <img src="assets/nav1.png" alt="Company Building" />
+          <img src="assets/design1.jpg" alt="Company Building" />
         </div>
         <div class="about-text fade-scroll fade-left">
           <h2 class="whoweareHeading">Who We Are</h2>
@@ -138,18 +156,18 @@
         <!-- First Row (3 services) -->
         <div class="services-row">
           <div class="service-card">
-            <img src="assets/servces1.png" alt="Iconic Technologies" />
+            <img src="assets/tech1.jpg" alt="Iconic Technologies" />
 
             <h5>Iconic Technologies</h5>
             <p>Powering transformation with software and digital solutions.</p>
           </div>
           <div class="service-card">
-            <img src="assets/service2.png" alt="Iconic Housing / Properties" />
+            <img src="assets/tech2.jpg" alt="Iconic Housing / Properties" />
             <h5>Iconic Housing / Properties</h5>
             <p>Creating value-driven, sustainable real estate projects.</p>
           </div>
           <div class="service-card">
-            <img src="assets/service3.png" alt="Iconic Interiors" />
+            <img src="assets/tech3.jpg" alt="Iconic Interiors" />
             <h5>Iconic Interiors</h5>
             <p>Redefining spaces with timeless design and style.</p>
           </div>
@@ -158,14 +176,14 @@
         <!-- Second Row (2 services, centered) -->
         <div class="services-row center-row">
           <div class="service-card">
-            <img src="assets/service4.png" alt="Iconic Graphics" />
+            <img src="assets/tech4.jpg" alt="Iconic Graphics" />
             <h5>Iconic Graphics</h5>
             <p>
               Crafting bold identities through branding, design, and motion art.
             </p>
           </div>
           <div class="service-card">
-            <img src="assets/service5.png" alt="Iconic Wears" />
+            <img src="assets/tech5.jpg" alt="Iconic Wears" />
             <h5>Iconic Wears</h5>
             <p>Blending elegance and modern trends for timeless fashion.</p>
           </div>
@@ -228,7 +246,7 @@
     <section class="about-section fade-scroll">
       <div class="container">
         <div class="about-image">
-          <img src="assets/nav1.png" alt="Company Building" />
+          <img src="assets/design2.jpg" alt="Company Building" />
         </div>
         <div class="about-text fade-scroll fade-left">
           <h2 class="whoweareHeading">Building a Sustainable Future</h2>
@@ -557,11 +575,15 @@
               <a href="#">Privacy Policy</a>
             </p>
             <div class="socials">
-              <img src="./assets/facebook.png" alt="icon">
-              <img src="./assets/twitter.png" alt="icon">
-              <img src="./assets/linkedin.png" alt="icon">
+              <img src="./assets/facebook.png" alt="icon" />
+              <img src="./assets/twitter.png" alt="icon" />
+              <img src="./assets/linkedin.png" alt="icon" />
             </div>
-            <p>© 2025 Iconic. All rights reserved.</p>
+            <p>
+              Terms & Conditions - Privacy Policy and © 2025 Iconic. All rights
+              reserved” should be displayed on the footer with navy-blue
+              background (using already existing color)
+            </p>
           </div>
         </div>
 
