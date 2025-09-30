@@ -418,8 +418,10 @@ header .container .right .menu-btn {
   row-gap: var(--spacing);
 }
 
-.send-message-form .container .inner-container form input {
+.send-message-form .container .inner-container form input,
+.send-message-form .container .inner-container .form textarea {
   width: 60%;
+  font-family: var(--font-family);
   padding: var(--spacing);
   border: none;
   box-shadow: 2px 3px 1px 2px #ebebeb9d;
@@ -428,6 +430,7 @@ header .container .right .menu-btn {
 .send-message-form .container .inner-container .form {
   width: 50%;
 }
+
 
 .send-message-form .container .inner-container .form p {
   width: 60%;
@@ -439,6 +442,19 @@ header .container .right .menu-btn {
 }
 #message-box {
   height: var(--spacing-5x);
+}
+
+@media screen and (max-width: 786px) {
+  .send-message-form .container .inner-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .send-message-form .container .inner-container .logo-name, 
+  .send-message-form .container .inner-container form input,
+  .send-message-form .container .inner-container .form,
+  .send-message-form .container .inner-container .form p {
+    width: 100%;
+  }
 }
 
 .values {
