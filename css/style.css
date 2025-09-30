@@ -452,7 +452,8 @@ header .container .right .menu-btn {
   .send-message-form .container .inner-container .logo-name, 
   .send-message-form .container .inner-container form input,
   .send-message-form .container .inner-container .form,
-  .send-message-form .container .inner-container .form p {
+  .send-message-form .container .inner-container .form p,
+  .send-message-form .container .inner-container .form textarea {
     width: 100%;
   }
 }
