@@ -395,6 +395,58 @@ header .container .right .menu-btn {
   }
 }
 
+
+.send-message-form .container .inner-container {
+  display: flex;
+  flex-direction: row ;
+  gap: var(--spacing-2x);
+  align-items: center;
+  justify-content: center;
+}
+
+.send-message-form .container .inner-container .logo-name{
+  width: 50%;
+}
+
+.send-message-form .container .inner-container .logo-name img{
+  width: 100%;
+}
+
+.send-message-form .container .inner-container form {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing);
+}
+
+.send-message-form .container .inner-container form input {
+  width: 60%;
+  padding: var(--spacing);
+  border: none;
+  box-shadow: 2px 3px 1px 2px #ebebeb9d;
+}
+
+.send-message-form .container .inner-container .form {
+  width: 50%;
+}
+
+.send-message-form .container .inner-container .form p {
+  width: 60%;
+  margin-top: var(--spacing);
+}
+
+.send-message-form .container .inner-container .form button {
+  margin-top: var(--spacing-2x);
+}
+#message-box {
+  height: var(--spacing-5x);
+}
+
+.values {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;                 
+}
+
 .our-core-values {
   background-color: #fdf3d9;
 }
@@ -408,18 +460,27 @@ header .container .right .menu-btn {
 .our-core-values .container .values::-webkit-scrollbar {
   display: none;
 }
+
 .our-core-values .container .values .value-card {
-  min-width: 280px;
+  min-width: 20%;
   flex: 0 0 calc(28.5714285714% - 1rem);
   padding: var(--spacing-2x);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   gap: var(--spacing);
   border: 1px solid #7d99b3;
   background-color: var(--color-white);
+  animation: slide 15s linear infinite ;
 }
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-380%); }
+}
+
 .our-core-values .container .values .value-card img {
   width: 80px;
   height: 80px;
@@ -428,6 +489,18 @@ header .container .right .menu-btn {
 }
 .our-core-values .container .values .value-card p {
   font-size: var(--font-size-card-subtext);
+}
+
+@media screen and (max-width: 786px) {
+.our-core-values .container .values .value-card {
+  min-width: 100%;
+  animation: slide 20s linear infinite ;
+  }
+@keyframes slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-630%); }
+}
+
 }
 
 .leadership-section .container .leaders {
@@ -582,7 +655,6 @@ header .container .right .menu-btn {
     padding: var(--spacing);
   }
 }
-
 .footer .container {
   display: grid;
   grid-template-columns: 2fr 1fr;
